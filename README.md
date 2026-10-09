@@ -1,7 +1,7 @@
 <div align="center">
 
   <h1>⚡ Prashant Meni — Personal Portfolio</h1>
-  <p><strong>AI, Automation &amp; Intelligent Systems</strong></p>
+  <p><strong>AI, Embedded Systems &amp; Intelligent Automation Engineer</strong></p>
 
   <p>
     <a href="https://github.com/prashantmeni/Portfolio/stargazers"><img src="https://img.shields.io/github/stars/prashantmeni/Portfolio?style=for-the-badge&logo=star&color=2563eb" alt="Stars"></a>
@@ -23,18 +23,18 @@
 
 ## 👨‍💻 About Me
 
-I am an **Electronics and Communication Engineering (ECE)** student at **CMR Institute of Technology (CMRIT), Bengaluru**, driven by a deep curiosity for **Artificial Intelligence, Embedded Firmware, IoT architectures, and Intelligent Automation**.
+Engineering student at **CMR Institute of Technology (CMRIT), Bengaluru**, specializing in **Artificial Intelligence, Embedded Systems, Microcontroller Firmware, and Intelligent Automation**.
 
-- 🔭 **Active Focus**: Building hardware prototypes and firmware for real-world automated systems.
-- 🎯 **Career Target**: Seeking an **AI & Machine Learning Internship** to contribute to intelligent automation and innovative product development.
-- 🏭 **Industry Exposure**: Practical experience in **Supply Quality Management** with Tata Electronics.
+- 🔭 **Active Focus**: Developing edge AI inferences, embedded microcontroller architectures (ESP32, Arduino, Micro:bit), sensor telemetry networks, and automated closed-loop systems.
+- 🎯 **Career Target**: Seeking opportunities as an **AI & Embedded Systems Engineer** or **Intelligent Automation Developer**.
+- 🏭 **Industry Exposure**: Practical engineering experience in **Supply Quality Management** with Tata Electronics.
 
 ---
 
 ## ✨ Portfolio Highlights
 
 - **Modern Glassmorphic Design**: Tailored executive palette with accessible contrast, typography, and clean micro-interactions.
-- **Fluid Horizontal Rails**: Custom drag-to-scroll, boundary-safe trackpads, and keyboard-friendly carousel controls for hardware projects and verified credentials.
+- **Fluid Horizontal Rails**: Custom drag-to-scroll, boundary-safe trackpads, and keyboard-friendly carousel controls for hardware deployments and verified credentials.
 - **Lightbox Credential Inspector**: High-resolution image preview modal with smooth focus trapping and Lenis scroll coordination.
 - **Smooth Inertia Scrolling**: Integrated with [Lenis](https://github.com/darkroomengineering/lenis) for 60fps scrolling experience.
 - **Live Asynchronous Contact**: Direct messaging integration powered by Web3Forms.
@@ -46,20 +46,22 @@ I am an **Electronics and Communication Engineering (ECE)** student at **CMR Ins
 
 | Project | Domain & Stack | Description | Highlights |
 | :--- | :--- | :--- | :--- |
-| **PWD Assistive Device** | `Python` `Micro:bit` `Sensors` | Alternative communication device engineered for persons with disabilities. | Cost-effective hardware, Python firmware, deployed prototype |
-| **Smart Agriculture System** | `C++` `ESP8266` `Blynk IoT` | Remote soil moisture, temperature, and humidity monitoring with automated irrigation. | Reduced water waste by ~40%, cloud telemetry, Blynk mobile app |
-| **Smart Home Automation** | `C` `Arduino Uno` `MQ2` | Intelligent home automation prototype with safety sensors and solar integration. | Scaled 3D model, MQ2 gas detection, automated servo controls |
-| **Pharmaceutical Inventory System** | `HTML5` `CSS3` `JavaScript` `Database` | Stock and expiry management web application to prevent medicine wastage. | Batch expiry tracking, inventory database queries, stock dispensing alerts |
+| **PWD Assistive Device** | `Assistive Embedded` `Python` `Micro:bit` | Alternative communication device engineered for persons with disabilities. | Cost-effective hardware, Python firmware, deployed prototype |
+| **Smart Agriculture System** | `Embedded IoT` `C++` `ESP8266` `Blynk` | Remote soil moisture, temperature, and humidity monitoring with automated irrigation. | Reduced water waste by ~40%, cloud telemetry, Blynk mobile app |
+| **Smart Home Automation** | `Intelligent Automation` `Arduino Uno` `MQ2` | Intelligent home automation prototype with safety sensors, servo actuators, and solar integration. | Scaled 3D model, MQ2 gas detection, automated servo controls |
+| **Pharmaceutical Inventory System** | `Process Automation` `HTML5` `JS` `Database` | Stock and expiry management web application to prevent medicine wastage. | Batch expiry tracking, inventory database queries, stock dispensing alerts |
 
 ---
 
 ## 🛠️ Technical Stack
 
 ```
-Hardware & IoT      : ESP8266, ESP32, Arduino Uno, Micro:bit, Raspberry Pi, Sensors (MQ2, DHT11)
-Languages           : Python, C, C++, Embedded C, HTML5, CSS3, JavaScript (ES6+)
-Software & Tools    : KiCad (PCB Design), MATLAB & Simulink, Blynk IoT, Git, GitHub
-Industry Practices  : SQM (Supply Quality Management), Firmware Debugging, Rapid Prototyping
+AI & Edge ML        : Edge AI, Python, OpenCV, NumPy, Machine Learning, Neural Inferences
+Embedded Systems    : ESP32, ESP8266, Arduino Uno, Micro:bit, Raspberry Pi, Embedded C/C++, Firmware
+Automation & Control: Closed-Loop Automation, n8n Workflows, Blynk IoT Telemetry, Relay Actuation, Firebase
+EDA & Simulation    : KiCad (PCB Design), Catia V5, MATLAB, Multisim, LabVIEW, Verilog HDL
+Web & Telemetry     : HTML5, CSS3, JavaScript (ES6+), Dart, REST APIs, IoT Dashboards
+Toolchains          : Git, GitHub CI/CD, VS Code, Arduino IDE, LeetCode (Problem Solving)
 ```
 
 ---
