@@ -1,7 +1,8 @@
 <div align="center">
 
-  <h1>⚡ Prashant Meni — Personal Portfolio</h1>
-  <p><strong>AI, Embedded Systems &amp; Intelligent Automation Engineer</strong></p>
+  <h1>⚡ Prashant Meni — Engineering Intelligence</h1>
+  <p><strong>"Engineering Intelligence. Building Possibilities."</strong></p>
+  <p><em>Electronics &amp; Communication Engineering &bull; Artificial Intelligence &bull; Embedded Systems &bull; Intelligent Automation</em></p>
 
   <p>
     <a href="https://github.com/prashantmeni/Portfolio/stargazers"><img src="https://img.shields.io/github/stars/prashantmeni/Portfolio?style=for-the-badge&logo=star&color=2563eb" alt="Stars"></a>
@@ -11,9 +12,10 @@
   </p>
 
   <p>
-    <a href="#-featured-projects"><b>Explore Projects</b></a> •
+    <a href="https://prashantmeni.github.io/Portfolio/"><b>🌐 View Live Portfolio</b></a> •
+    <a href="#-portfolio-highlights"><b>3D Sphere &amp; Features</b></a> •
+    <a href="#-featured-projects"><b>Case Studies</b></a> •
     <a href="#-technical-stack"><b>Technical Skills</b></a> •
-    <a href="#-getting-started"><b>Local Preview</b></a> •
     <a href="#-contact--connect"><b>Get In Touch</b></a>
   </p>
 
@@ -23,33 +25,36 @@
 
 ## 👨‍💻 About Me
 
-Engineering student at **CMR Institute of Technology (CMRIT), Bengaluru**, specializing in **Artificial Intelligence, Embedded Systems, Microcontroller Firmware, and Intelligent Automation**.
+Engineering student at **CMR Institute of Technology (CMRIT), Bengaluru**, and technology entrepreneur exploring the intersection of **Artificial Intelligence, Embedded Systems, Microcontroller Firmware, and Intelligent Automation**.
 
 - 🔭 **Active Focus**: Developing edge AI inferences, embedded microcontroller architectures (ESP32, Arduino, Micro:bit), sensor telemetry networks, and automated closed-loop systems.
+- 🏢 **Entrepreneurship**: Founder & CEO of **Menisphere Technologies**, focusing on hardware-software synthesis and product-driven engineering.
 - 🎯 **Career Target**: Seeking opportunities as an **AI & Embedded Systems Engineer** or **Intelligent Automation Developer**.
-- 🏭 **Industry Exposure**: Practical engineering experience in **Supply Quality Management** with Tata Electronics.
+- 🏭 **Industrial Exposure**: Practical engineering experience in **Supply Quality Management** with Tata Electronics.
 
 ---
 
 ## ✨ Portfolio Highlights
 
-- **Modern Glassmorphic Design**: Tailored executive palette with accessible contrast, typography, and clean micro-interactions.
-- **Fluid Horizontal Rails**: Custom drag-to-scroll, boundary-safe trackpads, and keyboard-friendly carousel controls for hardware deployments and verified credentials.
-- **Lightbox Credential Inspector**: High-resolution image preview modal with smooth focus trapping and Lenis scroll coordination.
-- **Smooth Inertia Scrolling**: Integrated with [Lenis](https://github.com/darkroomengineering/lenis) for 60fps scrolling experience.
-- **Live Asynchronous Contact**: Direct messaging integration powered by Web3Forms.
-- **Zero Heavy Frameworks**: Pure HTML5, Vanilla CSS, and modern ES Modules with no heavy runtime dependencies.
+- **Signature 3D Intelligent Sphere**: Interactive Three.js geometric sphere with concentric orbital rings, luminous wireframes, and interactive raycasted discipline nodes representing AI, Embedded Systems, IoT, Automation, and Software Engineering.
+- **Executive Light & Cyber-Lab Dark Themes**: Built-in seamless dark/light mode toggle with persistent `localStorage` synchronization and zero layout shift.
+- **Deep-Dive Project Case Studies**: Interactive case study inspector modals detailing Problem Statements, System Architecture, Hardware Components, Firmware Implementation, and Demonstrated Results.
+- **Dynamic Category Filtering**: Instant filtering across *All Projects*, *AI & Software*, *Embedded Systems*, and *IoT & Automation*.
+- **Interactive Capability Matrix**: Skills matrix with active cross-linking that highlights corresponding project badges upon selection.
+- **High-Resolution Credential Lightbox**: Fullscreen inspection modal for verified academic and technical certifications.
+- **Fluid Inertia Smooth Scrolling**: Coordinated via [Lenis](https://github.com/darkroomengineering/lenis) with full `prefers-reduced-motion` compliance and boundary safety.
+- **Live Asynchronous Message Transmission**: End-to-end validated contact form powered by Web3Forms with real-time status feedback.
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Featured Engineering Deployments
 
-| Project | Domain & Stack | Description | Highlights |
+| Project | Domain & Stack | Description | Highlights & Verification |
 | :--- | :--- | :--- | :--- |
-| **PWD Assistive Device** | `Assistive Embedded` `Python` `Micro:bit` | Alternative communication device engineered for persons with disabilities. | Cost-effective hardware, Python firmware, deployed prototype |
-| **Smart Agriculture System** | `Embedded IoT` `C++` `ESP8266` `Blynk` | Remote soil moisture, temperature, and humidity monitoring with automated irrigation. | Reduced water waste by ~40%, cloud telemetry, Blynk mobile app |
-| **Smart Home Automation** | `Intelligent Automation` `Arduino Uno` `MQ2` | Intelligent home automation prototype with safety sensors, servo actuators, and solar integration. | Scaled 3D model, MQ2 gas detection, automated servo controls |
-| **Pharmaceutical Inventory System** | `Process Automation` `HTML5` `JS` `Database` | Stock and expiry management web application to prevent medicine wastage. | Batch expiry tracking, inventory database queries, stock dispensing alerts |
+| **PWD Assistive Device** | `Assistive Embedded` `Python` `Micro:bit` | Alternative tactile and gestural communication device engineered for persons with speech/motor disabilities. | Cost-effective hardware, Python firmware, low-power state machine, deployed prototype |
+| **Smart Agriculture System** | `Agri-Tech` `C++` `ESP8266` `Blynk` | Autonomous closed-loop soil moisture and environmental monitoring with automated relay water pump irrigation. | Reduced water waste by ~40%, cloud telemetry, Blynk mobile app, field tested |
+| **Smart Home Automation** | `Intelligent Systems` `Arduino Uno` `MQ2` | Intelligent residential safety and energy prototype with combustible gas hazard detection and solar tracking. | Scaled 3D model, MQ2 gas sensor, automated servo barriers, solar illumination |
+| **Pharmaceutical Inventory System** | `Health-Tech` `HTML5` `JS` `Database` | Full-stack inventory management web application with batch expiration tracking and visual stock alerts. | Batch expiry calculation, inventory database queries, dispensing logs, zero wastage |
 
 ---
 
@@ -58,9 +63,9 @@ Engineering student at **CMR Institute of Technology (CMRIT), Bengaluru**, speci
 ```
 AI & Edge ML        : Edge AI, Python, OpenCV, NumPy, Machine Learning, Neural Inferences
 Embedded Systems    : ESP32, ESP8266, Arduino Uno, Micro:bit, Raspberry Pi, Embedded C/C++, Firmware
-Automation & Control: Closed-Loop Automation, n8n Workflows, Blynk IoT Telemetry, Relay Actuation, Firebase
-EDA & Simulation    : KiCad (PCB Design), Catia V5, MATLAB, Multisim, LabVIEW, Verilog HDL
-Web & Telemetry     : HTML5, CSS3, JavaScript (ES6+), Dart, REST APIs, IoT Dashboards
+Automation & Control: Closed-Loop Control, Relay Actuation, n8n Automation, Blynk IoT, Firebase Realtime
+EDA & Simulation    : KiCad (PCB Design), Catia V5 (3D CAD), MATLAB, Multisim, LabVIEW, Verilog HDL
+Web & Telemetry     : HTML5, CSS3, JavaScript (ES6+), Dart, REST APIs, IoT Dashboards, Three.js
 Toolchains          : Git, GitHub CI/CD, VS Code, Arduino IDE, LeetCode (Problem Solving)
 ```
 
@@ -72,10 +77,10 @@ Toolchains          : Git, GitHub CI/CD, VS Code, Arduino IDE, LeetCode (Problem
 Prashant-Portfolio/
 ├── Doc/
 │   ├── Projects/
-│   │   ├── inventory.jpg           # Pharmaceutical inventory web preview
-│   │   ├── iot.png                 # Smart agriculture demonstration image
-│   │   ├── pwd.jpg                 # Assistive communication prototype photo
-│   │   └── smart_home.jpg          # Smart home 3D model snapshot
+│   │   ├── inventory.jpg                     # Pharmaceutical inventory web preview
+│   │   ├── iot.png                           # Smart agriculture demonstration image
+│   │   ├── pwd.jpg                           # Assistive communication prototype photo
+│   │   └── smart_home.jpg                    # Smart home 3D model snapshot
 │   ├── Resume/
 │   │   └── 1CR24EC414_Prashant Meni_Resume.pdf
 │   └── certificates/
@@ -89,7 +94,7 @@ Prashant-Portfolio/
 │       ├── cert_hp_cybersecurity.png         # Introduction to Cybersecurity Awareness (HP LIFE)
 │       ├── cert_hp_agile_management.png      # Agile Project Management (HP LIFE)
 │       └── cert_kickstart_coding.png         # Kickstart to Coding (CMRIT & Ministry of HRD IIC)
-├── index.html                                # Consolidated, high-performance web portfolio
+├── index.html                                # Premium 3D Engineering Portfolio
 ├── LICENSE                                   # MIT License
 └── README.md                                 # Repository documentation
 ```
