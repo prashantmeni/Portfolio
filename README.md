@@ -4,8 +4,8 @@
   <p><strong>Electronics & Communication Engineering Student • AI, Automation & Embedded IoT</strong></p>
 
   <p>
-    <a href="https://github.com/prashantmeni/Prashant-Portfolio/stargazers"><img src="https://img.shields.io/github/stars/prashantmeni/Prashant-Portfolio?style=for-the-badge&logo=star&color=2563eb" alt="Stars"></a>
-    <a href="https://github.com/prashantmeni/Prashant-Portfolio/network/members"><img src="https://img.shields.io/github/forks/prashantmeni/Prashant-Portfolio?style=for-the-badge&logo=git&color=3b82f6" alt="Forks"></a>
+    <a href="https://github.com/prashantmeni/Portfolio/stargazers"><img src="https://img.shields.io/github/stars/prashantmeni/Portfolio?style=for-the-badge&logo=star&color=2563eb" alt="Stars"></a>
+    <a href="https://github.com/prashantmeni/Portfolio/network/members"><img src="https://img.shields.io/github/forks/prashantmeni/Portfolio?style=for-the-badge&logo=git&color=3b82f6" alt="Forks"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-059669?style=for-the-badge" alt="License"></a>
     <a href="https://linkedin.com/in/prashant-meni-400548297"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=for-the-badge&logo=linkedin" alt="LinkedIn"></a>
   </p>
@@ -75,15 +75,19 @@ Prashant-Portfolio/
 │   ├── Resume/
 │   │   └── 1CR24EC414_Prashant Meni_Resume.pdf
 │   └── certificates/
-│       ├── certificate_1.png       # IoT Fundamentals & Sensor Networks
-│       ├── certificate_2.png       # Embedded Systems & Microcontrollers
-│       ├── certificate_3.png       # Python for Embedded & Automation
-│       ├── certificate_4.png       # PCB Design & KiCad Fundamentals
-│       ├── certificate_5.png       # MATLAB & Signal Processing
-│       └── certificate_6.png       # Industrial SQM & Quality Engineering
-├── index.html                      # Consolidated, high-performance web portfolio
-├── LICENSE                         # MIT License
-└── README.md                       # Repository documentation
+│       ├── cert_ai_for_everyone.png          # AI For Everyone (DeepLearning.AI / Coursera)
+│       ├── cert_python_google.png            # Crash Course on Python (Google / Coursera)
+│       ├── cert_sensor_circuits.png          # Sensors & Sensor Circuit Design (CU Boulder / Coursera)
+│       ├── cert_iot_thingworx_gttc.png       # IoT Development with ThingWorx (GTTC Belagavi)
+│       ├── cert_electronics_programming.png  # Basics of Electronics & Programming (MOOC)
+│       ├── cert_sih_hackathon_cmrit.png      # Internal SIH-2025 Hackathon (CMRIT)
+│       ├── cert_tata_internship.png          # Supply Quality Management Internship (Tata Electronics)
+│       ├── cert_hp_cybersecurity.png         # Introduction to Cybersecurity Awareness (HP LIFE)
+│       ├── cert_hp_agile_management.png      # Agile Project Management (HP LIFE)
+│       └── cert_kickstart_coding.png         # Kickstart to Coding (CMRIT & Ministry of HRD IIC)
+├── index.html                                # Consolidated, high-performance web portfolio
+├── LICENSE                                   # MIT License
+└── README.md                                 # Repository documentation
 ```
 
 ---
@@ -94,8 +98,8 @@ This portfolio is a static web application that requires zero build steps or pac
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/prashantmeni/Prashant-Portfolio.git
-cd Prashant-Portfolio
+git clone https://github.com/prashantmeni/Portfolio.git
+cd Portfolio
 ```
 
 ### 2. Run locally
