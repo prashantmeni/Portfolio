@@ -49,6 +49,7 @@ I am an **Electronics and Communication Engineering (ECE)** student at **CMR Ins
 | **PWD Assistive Device** | `Python` `Micro:bit` `Sensors` | Alternative communication device engineered for persons with disabilities. | Cost-effective hardware, Python firmware, deployed prototype |
 | **Smart Agriculture System** | `C++` `ESP8266` `Blynk IoT` | Remote soil moisture, temperature, and humidity monitoring with automated irrigation. | Reduced water waste by ~40%, cloud telemetry, Blynk mobile app |
 | **Smart Home Automation** | `C` `Arduino Uno` `MQ2` | Intelligent home automation prototype with safety sensors and solar integration. | Scaled 3D model, MQ2 gas detection, automated servo controls |
+| **Pharmaceutical Inventory System** | `HTML5` `CSS3` `JavaScript` `Database` | Stock and expiry management web application to prevent medicine wastage. | Batch expiry tracking, inventory database queries, stock dispensing alerts |
 
 ---
 
@@ -69,6 +70,7 @@ Industry Practices  : SQM (Supply Quality Management), Firmware Debugging, Rapid
 Prashant-Portfolio/
 ├── Doc/
 │   ├── Projects/
+│   │   ├── inventory.jpg           # Pharmaceutical inventory web preview
 │   │   ├── iot.png                 # Smart agriculture demonstration image
 │   │   ├── pwd.jpg                 # Assistive communication prototype photo
 │   │   └── smart_home.jpg          # Smart home 3D model snapshot
