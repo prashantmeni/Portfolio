@@ -1,7 +1,7 @@
 <div align="center">
 
   <h1>⚡ Prashant Meni — Personal Portfolio</h1>
-  <p><strong>Electronics & Communication Engineering Student • AI, Automation & Embedded IoT</strong></p>
+  <p><strong>AI, Automation &amp; Intelligent Systems</strong></p>
 
   <p>
     <a href="https://github.com/prashantmeni/Portfolio/stargazers"><img src="https://img.shields.io/github/stars/prashantmeni/Portfolio?style=for-the-badge&logo=star&color=2563eb" alt="Stars"></a>
