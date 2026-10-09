@@ -4,204 +4,1752 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prashant Meni | IoT & Embedded Engineer</title>
+  <title>Prashant Meni — ECE Student | AI, Automation &amp; IoT</title>
+  <meta name="description"
+    content="Electronics and Communication Engineering student passionate about AI, automation, IoT, and intelligent systems. Experienced in Python, embedded development, and building real-world technology projects. Seeking an AI internship to contribute to automation, machine learning, and innovative product development.">
 
+  <!-- Typography: Plus Jakarta Sans & JetBrains Mono / Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Lenis Smooth Scroll -->
+  <script type="importmap">
+  {
+    "imports": {
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.18/+esm"
+    }
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS — Executive Light Tech Theme
+       ========================================================================== */
+    :root {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-muted: #e2e8f0;
+
+      --text-heading: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #3b82f6;
+      --primary-soft: #eff6ff;
+      --primary-border: #bfdbfe;
+
+      --emerald: #059669;
+      --emerald-soft: #ecfdf5;
+      --emerald-border: #a7f3d0;
+
+      --amber: #d97706;
+      --amber-soft: #fffbeb;
+
+      --border-light: #e2e8f0;
+      --border-subtle: #f1f5f9;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'Fira Code', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+
+      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 12px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 20px 35px -5px rgba(37, 99, 235, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: auto;
+      background-color: var(--bg-base);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-color: var(--bg-base);
+      color: var(--text-body);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    ::selection {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+    }
+
+    /* Top Scroll Progress Indicator */
+    #progress-tracker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), #60a5fa, var(--emerald));
+      z-index: 9999;
+      transition: width 0.08s ease-out;
+    }
+
+    /* Subtle Architectural Background Grid */
+    .bg-grid-pattern {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 30%, black 50%, transparent 95%);
+    }
+
+    /* Soft Atmospheric Gradient Orbs */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .orb-blue {
+      width: 45vw;
+      height: 45vw;
+      background: radial-gradient(circle, rgba(219, 234, 254, 0.8) 0%, transparent 70%);
+      top: -10vw;
+      left: -5vw;
+    }
+
+    .orb-emerald {
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(209, 250, 229, 0.7) 0%, transparent 70%);
+      top: 35vh;
+      right: -10vw;
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2.5rem;
+      }
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR (Clean Glass Dock)
+       ========================================================================== */
+    .navbar-dock {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2.5rem);
+      max-width: 1080px;
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-glass {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.4rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .navbar-dock.scrolled .nav-glass {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: #cbd5e1;
+      box-shadow: 0 12px 35px -6px rgba(15, 23, 42, 0.1), 0 2px 6px 0 rgba(15, 23, 42, 0.05);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-heading);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-accent {
+      color: var(--primary);
+    }
+
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .brand-badge {
+        display: inline-block;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+    }
+
+    @media (min-width: 860px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-item a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s ease;
+    }
+
+    .nav-item a:hover,
+    .nav-item a.active {
+      color: var(--primary);
+      background: var(--primary-soft);
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-pill);
+      color: #ffffff;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       HERO SECTION — Clean Executive Layout
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 8.5rem;
+      padding-bottom: 5rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.95rem;
+      background: var(--emerald-soft);
+      border: 1px solid var(--emerald-border);
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--emerald);
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+    }
+
+    .hero-heading {
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text-heading);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-heading .text-primary {
+      color: var(--primary);
+    }
+
+    .typewriter-box {
+      font-family: var(--font-mono);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 2rem;
+    }
+
+    .typewriter-prefix {
+      color: var(--text-subtle);
+    }
+
+    .cursor-caret {
+      display: inline-block;
+      width: 2px;
+      height: 1.15em;
+      background: var(--primary);
+      animation: blinkCursor 0.9s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blinkCursor {
+
+      0%,
+      49% {
+        opacity: 1;
+      }
+
+      50%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--text-body);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-lead strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-solid-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.85rem 1.8rem;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .btn-solid-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-subtle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.85rem 1.6rem;
+      background: var(--bg-surface);
+      color: var(--text-heading);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline-subtle:hover {
+      border-color: #cbd5e1;
+      background: var(--bg-subtle);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border-light);
+      max-width: 520px;
+    }
+
+    .hero-stat-box .h-stat-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-stat-box .h-stat-num span {
+      color: var(--primary);
+    }
+
+    .hero-stat-box .h-stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 0.35rem;
+    }
+
+    /* Hero Right: Professional Engineering Dossier Card */
+    .hero-exec-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-exec-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-border);
+      transform: translateY(-3px);
+    }
+
+    .exec-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .exec-avatar-initials {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+      flex-shrink: 0;
+    }
+
+    .exec-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .exec-card-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .exec-card-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .exec-institution-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.15rem;
+    }
+
+    .exec-spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .exec-spec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.95rem;
+    }
+
+    .exec-spec-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .exec-spec-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .spec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      line-height: 1.35;
+    }
+
+    .exec-card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .exec-availability-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .exec-quick-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+    }
+
+    .exec-social-link {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .exec-social-link:hover {
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-soft);
+      transform: translateY(-2px);
+    }
+
+    .exec-download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-sm);
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin-left: auto;
+    }
+
+    .exec-download-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+    .section-spacing {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-lead-box {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.65rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-heading);
+      line-height: 1.15;
+    }
+
+    /* ==========================================================================
+       CAREER TIMELINE & ARSENAL
+       ========================================================================== */
+    .timeline-split-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .timeline-split-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .column-header-bar {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .column-header-bar i {
+      color: var(--primary);
+    }
+
+    .timeline-flow {
+      list-style: none;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-flow::before {
+      content: '';
+      position: absolute;
+      left: 0.45rem;
+      top: 0.6rem;
+      bottom: 0.6rem;
+      width: 2px;
+      background: #e2e8f0;
+    }
+
+    .timeline-row {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-row:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-circle {
+      position: absolute;
+      left: -2rem;
+      top: 0.35rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 3px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-row:hover .timeline-circle {
+      background: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .timeline-date-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-job-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-org {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-body-text {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* Skills Grid */
+    .skills-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card-white {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .skill-card-white:hover {
+      border-color: var(--primary-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-card-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-card-title i {
+      color: var(--primary);
+    }
+
+    .skill-meter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 0.35rem;
+    }
+
+    .meter-track {
+      height: 7px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, var(--primary), #3b82f6);
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chips-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .clean-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-pill);
+      color: var(--text-body);
+      transition: all 0.2s ease;
+    }
+
+    .clean-pill:hover {
+      background: var(--primary-soft);
+      border-color: var(--primary-border);
+      color: var(--primary-dark);
+    }
+
+    /* ==========================================================================
+       HORIZONTAL CAROUSEL (PROJECTS & CERTIFICATES)
+       ========================================================================== */
+    .carousel-header-dock {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .carousel-instruction {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .carousel-nav-suite {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .counter-pill-badge {
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .arrow-circle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-heading);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .arrow-circle-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    /* Horizontal Rail Track */
+    .horizontal-slider-track {
+      display: flex;
+      gap: 1.75rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.75rem 0.25rem 2rem;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 #f1f5f9;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-x pan-y;
+      overscroll-behavior-x: contain;
+    }
+
+    .horizontal-slider-track.is-dragging {
+      cursor: grabbing !important;
+      scroll-snap-type: none !important;
+      scroll-behavior: auto !important;
+      user-select: none !important;
+    }
+
+    .horizontal-slider-track.is-dragging * {
+      cursor: grabbing !important;
+      pointer-events: none;
+    }
+
+    .horizontal-slider-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .horizontal-slider-track::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: var(--radius-pill);
+    }
+
+    .horizontal-slider-track::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: var(--radius-pill);
+    }
+
+    .horizontal-slider-track::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Project Cards (Light & Professional) */
+    .project-card-exec {
+      flex: 0 0 380px;
+      max-width: 380px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow-md);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .project-card-exec {
+        flex: 0 0 300px;
+        max-width: 300px;
+      }
+    }
+
+    .project-card-exec:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-cover-container {
+      width: 100%;
+      height: 210px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }
+
+    .project-cover-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card-exec:hover .project-cover-container img {
+      transform: scale(1.05);
+    }
+
+    .project-order-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+    }
+
+    .project-body-padding {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1rem;
+    }
+
+    .project-sector-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-title-h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+    }
+
+    .project-summary-p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    .project-bullet-group {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--border-light);
+    }
+
+    .project-bullet-item {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-bullet-item i {
+      color: var(--emerald);
+      font-size: 0.75rem;
+    }
+
+    .project-footer-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .project-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .project-action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: all 0.2s ease;
+    }
+
+    .project-link-btn:hover {
+      color: var(--primary-dark);
+      transform: translateX(3px);
+    }
+
+    .project-verified-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    /* Certificate Cards */
+    .cert-card-exec {
+      flex: 0 0 310px;
+      max-width: 310px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      scroll-snap-align: start;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (max-width: 480px) {
+      .cert-card-exec {
+        flex: 0 0 270px;
+        max-width: 270px;
+      }
+    }
+
+    .cert-card-exec:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .cert-preview-frame {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }
+
+    .cert-preview-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .cert-card-exec:hover .cert-preview-frame img {
+      transform: scale(1.05);
+    }
+
+    .cert-magnify-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .cert-card-exec:hover .cert-magnify-overlay {
+      opacity: 1;
+    }
+
+    .cert-body-content {
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex: 1;
+    }
+
+    .cert-subject-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cert-name-heading {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.35;
+    }
+
+    .cert-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .cert-meta-info i {
+      color: var(--amber);
+    }
+
+    /* ==========================================================================
+       CONTACT & EXECUTIVE FOOTER
+       ========================================================================== */
+    .contact-wrapper-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      padding: 7rem 0 3rem;
+    }
+
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      margin-bottom: 5rem;
+    }
+
+    @media (min-width: 900px) {
+      .contact-layout-grid {
+        grid-template-columns: 1fr 1.15fr;
+      }
+    }
+
+    .contact-details-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-title-main {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-heading);
+      letter-spacing: -0.025em;
+    }
+
+    .contact-title-main span {
+      color: var(--primary);
+    }
+
+    .contact-intro-p {
+      color: var(--text-body);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .contact-link-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .contact-row-entry {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-body);
+      transition: color 0.2s ease;
+    }
+
+    .contact-icon-square {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-row-entry:hover {
+      color: var(--primary);
+    }
+
+    .social-buttons-deck {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .social-circle-link {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .social-circle-link:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-soft);
+      transform: translateY(-2px);
+    }
+
+    /* Contact Form (Clean White Card) */
+    .contact-form-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-title-h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .form-title-h3 i {
+      color: var(--primary);
+    }
+
+    .form-inputs-dual {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .form-inputs-dual {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .clean-input-field {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-heading);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .clean-input-field:focus {
+      border-color: var(--primary);
+      background: var(--bg-surface);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .clean-input-field::placeholder {
+      color: var(--text-subtle);
+    }
+
+    textarea.clean-input-field {
+      resize: vertical;
+      min-height: 130px;
+      margin-bottom: 1.25rem;
+    }
+
+    .submit-button-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .submit-button-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .submit-button-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    /* Footer Copyright Bar */
+    .footer-base-bar {
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .footer-base-bar a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .footer-base-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       MODAL LIGHTBOX
+       ========================================================================== */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .lightbox-dialog {
+      position: relative;
+      z-index: 10;
+      max-width: 860px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox-overlay.active .lightbox-dialog {
+      transform: scale(1);
+    }
+
+    .lightbox-close-trigger {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.08);
+      color: var(--text-heading);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      z-index: 20;
+    }
+
+    .lightbox-close-trigger:hover {
+      background: var(--primary);
+      color: #ffffff;
+      transform: rotate(90deg);
+    }
+
+    #lightbox-preview-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    
+  </style>
 </head>
 
 <body>
-  <div id="scroll-progress"></div>
 
-  <nav class="techno-nav">
-    <div class="nav-container container">
-      <div class="brand-logo">&lt;Prashant_Reddy/&gt;</div>
+  <!-- Top Scroll Progress Tracker -->
+  <div id="progress-tracker"></div>
 
-      <!-- Mobile nav toggle (visible on small screens) -->
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><i
-          class="fas fa-bars"></i></button>
+  <!-- Ambient Subtle Grid & Radiant Lights -->
+  <div class="bg-grid-pattern"></div>
+  <div class="ambient-orb orb-blue"></div>
+  <div class="ambient-orb orb-emerald"></div>
 
-      <div class="nav-center-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Stack</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#certifications" class="nav-link">Certificates</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
+  <!-- ========================================================================
+       EXECUTIVE DOCK NAVIGATION
+       ======================================================================== -->
+  <nav class="navbar-dock" id="navbar">
+    <div class="nav-glass">
+      <a href="#hero" class="nav-brand">
+        <span>Prashant</span>
+        <span class="brand-accent">Meni</span>
+        <span class="brand-badge">ECE &bull; IoT</span>
+      </a>
 
-      <div class="nav-right-actions">
-        <a href="Doc/Resume/1CR24EC414_Prashant Meni_Resume.pdf" download class="btn-nav-primary">
-          Resume <i class="fas fa-download"></i>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#timeline">Timeline</a></li>
+        <li class="nav-item"><a href="#skills">Skills</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#certifications">Certificates</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <a href="Doc/Resume/1CR24EC414_Prashant Meni_Resume.pdf" download class="nav-cta">
+          <i class="fas fa-file-pdf"></i>
+          <span>Download CV</span>
         </a>
       </div>
     </div>
   </nav>
 
-  <header class="hero-section">
-
-    <div class="hero-overlay"></div>
-    <div class="hero-content container reveal">
-      <p class="hero-subtitle">Hello, I am</p>
-      <h1 class="hero-title">Prashant Meni</h1>
-      <h2 class="hero-typing">I build <span id="typing-text"></span></h2>
-      <p class="hero-desc">
-        Electronics & Communication Engineer bridging the gap between
-        <span class="highlight-code">Hardware</span> and <span class="highlight-code">Intelligence</span>.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
-      </div>
-    </div>
-
-    <div class="tech-grid"></div>
-  </header>
-
-  <section id="about" class="section-dark reveal">
-    <div class="container about-wrapper">
-      <div class="profile-container">
-        <div class="profile-card">
-          <img src="images\profile.png" alt="Prashant Meni" class="profile-img">
-        </div>
-      </div>
-
-      <div class="about-content">
-        <div class="section-tag">&lt;AboutMe/&gt;</div>
-        <h2>Engineering The Future</h2>
-        <p>
-          I am a B.E. student at CMR Institute of Technology with a passion for embedded systems.
-          Unlike traditional developers, I understand the silicon that runs the code.
-          From <strong>circuit design</strong> to <strong>cloud integration</strong>, I build full-stack IoT solutions.
-        </p>
-
-        <div class="stats-grid">
-          <div class="stat-item">
-            <h3>2027</h3>
-            <p>Graduation</p>
-          </div>
-          <div class="stat-item">
-            <h3>5+</h3>
-            <p>Major Projects</p>
-          </div>
-          <div class="stat-item">
-            <h3>0.3+</h3>
-            <p>Years in Electronics</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section-dark reveal">
+  <!-- ========================================================================
+       01: HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
     <div class="container">
-      <h2 class="section-header"><span class="text-accent">02.</span> Technical Arsenal</h2>
+      <div class="hero-grid">
 
-      <div class="skills-wrapper">
+        <!-- Left Information Column -->
+        <div class="hero-content-col">
+          <h1 class="hero-heading">
+            Prashant <span class="text-primary">Meni</span>
+          </h1>
 
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Languages</h3>
-
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Python</p>
-              <p class="percent">90%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 90%"></span>
-            </div>
+          <div class="typewriter-box">
+            <span class="typewriter-prefix">&gt;</span>
+            <span id="typewriter-output"></span>
+            <span class="cursor-caret"></span>
           </div>
 
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>C / C++</p>
-              <p class="percent">85%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 85%"></span>
-            </div>
+          <p class="hero-lead">
+            Electronics and Communication Engineering student passionate about <strong>AI</strong>,
+            <strong>automation</strong>, <strong>IoT</strong>, and <strong>intelligent systems</strong>. Experienced in
+            Python, embedded development, and building real-world technology projects. Seeking an <strong>AI
+              internship</strong> to contribute to automation, machine learning, and innovative product development
+            while expanding practical industry experience.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="#projects" class="btn-solid-primary">
+              <span>View Projects</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn-outline-subtle">
+              <i class="fas fa-envelope"></i>
+              <span>Get in Touch</span>
+            </a>
           </div>
 
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Verilog</p>
-              <p class="percent">75%</p>
+          <div class="hero-stats-row">
+            <div class="hero-stat-box">
+              <div class="h-stat-num">3<span>+</span></div>
+              <div class="h-stat-label">Projects Built</div>
             </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 75%"></span>
+            <div class="hero-stat-box">
+              <div class="h-stat-num">6<span>+</span></div>
+              <div class="h-stat-label">Achievements</div>
             </div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Hardware & IoT</h3>
-
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Arduino / ESP32</p>
-              <p class="percent">95%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 95%"></span>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Circuit Design</p>
-              <p class="percent">80%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 80%"></span>
-            </div>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Sensors (MQ2, DHT)</p>
-              <p class="percent">90%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 90%"></span>
+            <div class="hero-stat-box">
+              <div class="h-stat-num">20<span>+</span></div>
+              <div class="h-stat-label">Tech &amp; Tools</div>
             </div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3><i class="fas fa-tools"></i> Tools</h3>
+        <!-- Right: Executive Engineer Profile Dossier Card -->
+        <div class="hero-exec-col">
+          <div class="hero-exec-card">
+            <!-- Header: Profile Identity -->
+            <div class="exec-card-header">
+              <div class="exec-avatar-initials">PM</div>
+              <div class="exec-header-text">
+                <h3 class="exec-card-name">Prashant Meni</h3>
+                <p class="exec-card-role">ECE Student &bull; AI, Automation &amp; IoT</p>
+                <span class="exec-institution-tag"><i class="fas fa-university"></i> CMRIT, Bengaluru</span>
+              </div>
+            </div>
 
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>MATLAB</p>
-              <p class="percent">85%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 85%"></span>
-            </div>
-          </div>
+            <!-- Key Professional Competencies -->
+            <div class="exec-spec-list">
+              <div class="exec-spec-item">
+                <div class="exec-spec-icon"><i class="fas fa-robot"></i></div>
+                <div class="exec-spec-detail">
+                  <span class="spec-label">Core Focus</span>
+                  <span class="spec-value">AI, Automation &amp; Intelligent Systems</span>
+                </div>
+              </div>
 
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>KiCad / Multisim</p>
-              <p class="percent">75%</p>
-            </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 75%"></span>
-            </div>
-          </div>
+              <div class="exec-spec-item">
+                <div class="exec-spec-icon"><i class="fas fa-microchip"></i></div>
+                <div class="exec-spec-detail">
+                  <span class="spec-label">Engineering Focus</span>
+                  <span class="spec-value">Python, Embedded Firmware &amp; IoT Solutions</span>
+                </div>
+              </div>
 
-          <div class="skill-box">
-            <div class="skill-info">
-              <p>Git & GitHub</p>
-              <p class="percent">80%</p>
+              <div class="exec-spec-item">
+                <div class="exec-spec-icon"><i class="fas fa-industry"></i></div>
+                <div class="exec-spec-detail">
+                  <span class="spec-label">Industrial Experience</span>
+                  <span class="spec-value">Supply Quality Management (Tata Electronics)</span>
+                </div>
+              </div>
+
+              <div class="exec-spec-item">
+                <div class="exec-spec-icon"><i class="fas fa-bullseye"></i></div>
+                <div class="exec-spec-detail">
+                  <span class="spec-label">Career Objective</span>
+                  <span class="spec-value">Seeking AI Internship (ML &amp; Product Dev)</span>
+                </div>
+              </div>
             </div>
-            <div class="skill-bar">
-              <span class="skill-fill" style="--w: 80%"></span>
+
+            <!-- Verification Footer & Quick Actions -->
+            <div class="exec-card-footer">
+              <div class="exec-availability-row">
+                <i class="fas fa-circle-check" style="color: var(--primary);"></i>
+                <span>Actively Seeking AI Internship</span>
+              </div>
+              <div class="exec-quick-links">
+                <a href="https://linkedin.com/in/prashant-meni-400548297" target="_blank" rel="noopener noreferrer"
+                  class="exec-social-link" title="LinkedIn Profile">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/prashantmeni" target="_blank" rel="noopener noreferrer"
+                  class="exec-social-link" title="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:prashantmeni2005@gmail.com" class="exec-social-link" title="Send Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+                <a href="Doc/Resume/1CR24EC414_Prashant Meni_Resume.pdf" download class="exec-download-link"
+                  title="Download Resume PDF">
+                  <i class="fas fa-file-pdf"></i>
+                  <span>Resume PDF</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -210,235 +1758,1046 @@
     </div>
   </section>
 
-  <section id="projects" class="section-dark reveal">
+
+
+  <!-- ========================================================================
+       03: CAREER TIMELINE & ACADEMICS
+       ======================================================================== -->
+  <section class="section-spacing" id="timeline"
+    style="background: var(--bg-surface); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
-      <h2 class="section-header"><span class="text-accent">03.</span> Featured Projects</h2>
+      <div class="section-lead-box">
+        <p class="section-eyebrow">Career History</p>
+        <h2 class="section-title">Experience &amp; Education</h2>
+      </div>
 
-      <div class="projects-grid">
+      <div class="timeline-split-grid">
+        <!-- Experience Column -->
+        <div class="timeline-col-box">
+          <h3 class="column-header-bar"><i class="fas fa-briefcase"></i> Work Experience</h3>
+          <ul class="timeline-flow">
+            <li class="timeline-row" data-item-id="default_exp_1">
+              <div class="timeline-circle"></div>
+              <div class="timeline-date-tag">DEC 2023 &mdash; APR 2024</div>
+              <h4 class="timeline-job-title">Supply Quality Management Intern</h4>
+              <div class="timeline-org"><i class="fas fa-building"></i> Tata Electronics &bull; Kolar, Karnataka</div>
+              <p class="timeline-body-text">
+                Ensured rigorous component quality on high-volume production lines. Conducted dimensional verification,
+                mechanical inspection, incoming component clearance, and hardware quality reports.
+              </p>
+            </li>
 
-        <article class="project-card" data-title="PWD Communication Device"
-          data-desc="Assistive technology using Micro:Bit to help persons with disabilities communicate."
-          data-tech="Python, Micro:Bit" data-img="Doc/Projects/pwd.jpg">
-          <div class="card-header">
-            <i class="far fa-folder-open folder-icon"></i>
-            <div class="card-links">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-          </div>
-          <h3 class="card-title">PWD Assistive Device</h3>
-          <div class="card-desc">
-            A Micro:Bit based system converting slight movements into text communication.
-          </div>
-          <div class="card-tech-list">
-            <span>Python</span>
-            <span>Micro:Bit</span>
-            <span>Embedded</span>
-          </div>
-        </article>
+            <li class="timeline-row" data-item-id="default_exp_2">
+              <div class="timeline-circle"></div>
+              <div class="timeline-date-tag">2022 &mdash; PRESENT</div>
+              <h4 class="timeline-job-title">Independent Embedded Systems Developer</h4>
+              <div class="timeline-org"><i class="fas fa-laptop-code"></i> Freelance Hardware Projects &bull; Bengaluru
+              </div>
+              <p class="timeline-body-text">
+                Designing custom microcontroller architectures from schematic capture and KiCad PCB layout to embedded
+                C++ firmware and cloud-connected telemetry dashboards.
+              </p>
+            </li>
+          </ul>
+        </div>
 
-        <article class="project-card" data-title="Smart Agriculture"
-          data-desc="IoT System for soil monitoring and automated irrigation." data-tech="C++, ESP8266, Blynk"
-          data-img="Doc/Projects/iot.png">
-          <div class="card-header">
-            <i class="far fa-folder-open folder-icon"></i>
-            <div class="card-links">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="card-title">Smart Agriculture</h3>
-          <div class="card-desc">
-            Automated irrigation system using soil moisture sensors and cloud logging via Blynk.
-          </div>
-          <div class="card-tech-list">
-            <span>ESP8266</span>
-            <span>C++</span>
-            <span>IoT</span>
-          </div>
-        </article>
+        <!-- Academic Column -->
+        <div class="timeline-col-box">
+          <h3 class="column-header-bar"><i class="fas fa-graduation-cap"></i> Education Qualifications</h3>
+          <ul class="timeline-flow">
+            <li class="timeline-row" data-item-id="default_edu_1">
+              <div class="timeline-circle"></div>
+              <div class="timeline-date-tag">2024 &mdash; 2027 | (PURSUING)</div>
+              <h4 class="timeline-job-title">Bachelor of Engineering (B.E.), Electronics and Communication Engineering
+              </h4>
+              <div class="timeline-org"><i class="fas fa-university"></i> CMR Institute of Technology, Bengaluru</div>
+              <p class="timeline-body-text">
+                Pursuing undergraduate engineering focusing on embedded systems, microcontrollers, VLSI design, and IoT
+                architectures.
+              </p>
+            </li>
 
-        <article class="project-card" data-title="Home Automation"
-          data-desc="Voice and sensor controlled home automation." data-tech="Arduino, Sensors"
-          data-img="Doc/Projects/smart_home.jpg">
-          <div class="card-header">
-            <i class="far fa-folder-open folder-icon"></i>
-            <div class="card-links">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="card-title">Home Automation</h3>
-          <div class="card-desc">
-            Arduino-based central control unit for lights, fans, and gas leak detection (MQ2).
-          </div>
-          <div class="card-tech-list">
-            <span>Arduino</span>
-            <span>Sensors</span>
-            <span>C</span>
-          </div>
-        </article>
+            <li class="timeline-row" data-item-id="default_edu_2">
+              <div class="timeline-circle"></div>
+              <div class="timeline-date-tag">80.10%, 2021 &mdash; 2024</div>
+              <h4 class="timeline-job-title">Diploma in Electronics &amp; Communication Engineering</h4>
+              <div class="timeline-org"><i class="fas fa-school"></i> Government Polytechnic, Rabakavi-Banahatti</div>
+              <p class="timeline-body-text">
+                Graduated with 80.10% Distinction. Strong laboratory foundation in microcontrollers, circuit theory,
+                analog/digital electronics, and sensor systems.
+              </p>
+            </li>
 
-        <article class="project-card" data-title="Inventory"
-          data-desc="Pharmaceutical Inventory and Expiry Management System" data-tech="Inventory Management, Database Management, Problem Solving"
-          data-img="Doc/Projects/smart_home.jpg">
-          <div class="card-header">
-            <i class="far fa-folder-open folder-icon"></i>
-            <div class="card-links">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="card-title">Pharmaceutical Inventory and Expiry Management System</h3>
-          <div class="card-desc">
-            The system was designed to help medical stores and pharmaceutical units efficiently manage stock levels, track medicine expiry dates, reduce wastage, and improve operational accuracy.
-          </div>
-          <div class="card-tech-list">
-            <span>Inventory Management</span>
-            <span>Database Management</span>
-            <span>Problem Solving</span>
-          </div>
-        </article>
-
+            <li class="timeline-row" data-item-id="default_edu_3">
+              <div class="timeline-circle"></div>
+              <div class="timeline-date-tag">84%, 2021</div>
+              <h4 class="timeline-job-title">SSLC (10th GRADE)</h4>
+              <div class="timeline-org"><i class="fas fa-school"></i> Poornaprajnya English Medium High School, Rabakavi
+              </div>
+              <p class="timeline-body-text">
+                Graduated secondary school education with 84% academic distinction.
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="experience" class="section-dark reveal">
+  <!-- ========================================================================
+       04: TECHNICAL SKILLS ARSENAL
+       ======================================================================== -->
+  <section class="section-spacing" id="skills">
     <div class="container">
-      <h2 class="section-header"><span class="text-accent">04.</span> Experience</h2>
+      <div class="section-lead-box">
+        <p class="section-eyebrow">Technical Competencies</p>
+        <h2 class="section-title">Engineered Skill Matrix</h2>
+      </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Dec 2023 - Apr 2024</div>
-          <div class="timeline-content">
-            <h3>Supply Quality Management Intern</h3>
-            <h4>Tata Electronics | Kolar, Karnataka</h4>
-            <p>
-              Worked on-site ensuring component quality standards. Gained industrial exposure to
-              electronics manufacturing and supply chain logistics.
+      <div class="skills-cluster">
+        <!-- 1. Programming Languages -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fas fa-code"></i>
+            <span>Programming Languages</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>Python</span>
+                <span style="color: var(--primary);">90%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>C</span>
+                <span style="color: var(--primary);">88%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>Verilog &amp; Dart</span>
+                <span style="color: var(--primary);">82%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 82%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">Python</span>
+            <span class="clean-pill">C</span>
+            <span class="clean-pill">Verilog</span>
+            <span class="clean-pill">Dart</span>
+          </div>
+        </div>
+
+        <!-- 2. Hardware & IoT -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fas fa-microchip"></i>
+            <span>Hardware &amp; IoT</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>ESP32 &amp; Arduino</span>
+                <span style="color: var(--primary);">95%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>Micro: bit &amp; Raspberry Pi</span>
+                <span style="color: var(--primary);">88%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>Relays &amp; Sensors Interfacing</span>
+                <span style="color: var(--primary);">92%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">ESP32</span>
+            <span class="clean-pill">Arduino</span>
+            <span class="clean-pill">Micro: bit</span>
+            <span class="clean-pill">Raspberry Pi</span>
+            <span class="clean-pill">Relays</span>
+            <span class="clean-pill">Sensors</span>
+          </div>
+        </div>
+
+        <!-- 3. Software & Simulation -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fas fa-compass-drafting"></i>
+            <span>Software &amp; Simulation</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>MATLAB, Multisim &amp; LabVIEW</span>
+                <span style="color: var(--primary);">86%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 86%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>KiCad &amp; Catia V5</span>
+                <span style="color: var(--primary);">84%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 84%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>IDEs, n8n Automation &amp; Firebase</span>
+                <span style="color: var(--primary);">88%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">MATLAB</span>
+            <span class="clean-pill">Multisim</span>
+            <span class="clean-pill">LabVIEW</span>
+            <span class="clean-pill">KiCad</span>
+            <span class="clean-pill">Catia V5</span>
+            <span class="clean-pill">Arduino IDE</span>
+            <span class="clean-pill">Visual Studio Code</span>
+            <span class="clean-pill">Canva</span>
+            <span class="clean-pill">n8n Automation</span>
+            <span class="clean-pill">Firebase</span>
+          </div>
+        </div>
+
+        <!-- 4. Web Technologies -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fas fa-globe"></i>
+            <span>Web Technologies</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>HTML &amp; CSS</span>
+                <span style="color: var(--primary);">90%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>JavaScript</span>
+                <span style="color: var(--primary);">85%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">HTML</span>
+            <span class="clean-pill">CSS</span>
+            <span class="clean-pill">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- 5. Platforms & Version Control -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fas fa-code-branch"></i>
+            <span>Platforms &amp; Version Control</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>Git &amp; GitHub</span>
+                <span style="color: var(--primary);">88%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="meter-label-row">
+                <span>LeetCode Problem Solving</span>
+                <span style="color: var(--primary);">82%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 82%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">Git</span>
+            <span class="clean-pill">GitHub</span>
+            <span class="clean-pill">Leetcode</span>
+          </div>
+        </div>
+
+        <!-- 6. Operating Systems -->
+        <div class="skill-card-white">
+          <div class="skill-card-title">
+            <i class="fab fa-windows"></i>
+            <span>Operating Systems</span>
+          </div>
+          <div class="skill-meter-group">
+            <div>
+              <div class="meter-label-row">
+                <span>Windows OS &amp; Toolchain Environment</span>
+                <span style="color: var(--primary);">92%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chips-cluster">
+            <span class="clean-pill">Windows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       05: PROJECTS (HORIZONTAL CAROUSEL)
+       ======================================================================== -->
+  <section class="section-spacing" id="projects"
+    style="background: var(--bg-surface); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-lead-box">
+        <p class="section-eyebrow">Engineering Portfolio</p>
+        <h2 class="section-title">Hardware &amp; IoT Deployments</h2>
+      </div>
+
+      <!-- Carousel Top Bar with Live Counter & Smooth Controls -->
+      <div class="carousel-header-dock">
+        <div class="carousel-instruction">
+          <i class="fas fa-arrows-left-right"></i>
+          <span>Drag horizontally, swipe, or use arrows to explore</span>
+        </div>
+
+        <div class="carousel-nav-suite">
+          <span class="counter-pill-badge" id="proj-counter-badge">01 / 03</span>
+          <button class="arrow-circle-btn" id="proj-prev-btn" aria-label="Previous project">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="arrow-circle-btn" id="proj-next-btn" aria-label="Next project">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Horizontal Project Slider Track -->
+      <div class="horizontal-slider-track" id="projects-horizontal-track" data-lenis-prevent="true">
+
+        <!-- Project 1 -->
+        <article class="project-card-exec" data-item-id="default_proj_1">
+          <div class="project-cover-container">
+            <span class="project-order-badge">PROJECT // 01</span>
+            <img src="Doc/Projects/pwd.jpg"
+              alt="Alternative Communication Device for Persons with Disabilities (PWD) – Micro: bit" loading="lazy">
+          </div>
+
+          <div class="project-body-padding">
+            <div class="project-sector-tag">Assistive Technology &bull; Micro: bit</div>
+            <h4 class="project-title-h4">Alternative Communication Device for Persons with Disabilities (PWD) – Micro:
+              bit</h4>
+            <p class="project-summary-p">
+              Engineered a low-cost assistive communication device using Micro: bit to enable basic interaction for
+              persons with disabilities.
             </p>
+            <ul class="project-bullet-group">
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Programmed the Micro: bit in Python to
+                read, process, and transmit user inputs accurately and reliably.</li>
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Integrated cost-effective hardware
+                components, ensuring affordability and ease of deployment for real-world use.</li>
+            </ul>
+
+            <div class="project-footer-block">
+              <div class="project-tags-row">
+                <span class="tag-badge">Python</span>
+                <span class="tag-badge">Micro: bit</span>
+              </div>
+              <div class="project-action-bar">
+                <a href="https://github.com/prashantmeni" target="_blank" rel="noopener noreferrer"
+                  class="project-link-btn">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <span class="project-verified-tag"><i class="fas fa-check"></i> Deployed Prototype</span>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card-exec" data-item-id="default_proj_2">
+          <div class="project-cover-container">
+            <span class="project-order-badge">PROJECT // 02</span>
+            <img src="Doc/Projects/iot.png" alt="IOT Based Agriculture monitoring system" loading="lazy">
+          </div>
+          <div class="project-body-padding">
+            <div class="project-sector-tag">Agri-Tech &bull; ESP8266 IoT</div>
+            <h4 class="project-title-h4">IOT Based Agriculture monitoring system</h4>
+            <p class="project-summary-p">
+              Designed and implemented an IoT-based agriculture monitoring system using ESP8266, integrating soil
+              moisture, temperature, and humidity sensors.
+            </p>
+            <ul class="project-bullet-group">
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Automated irrigation using
+                relay-controlled water pump, reducing manual intervention by approximately 40%.</li>
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Enabled real-time remote monitoring
+                and control through the Blynk IoT mobile application.</li>
+            </ul>
+
+            <div class="project-footer-block">
+              <div class="project-tags-row">
+                <span class="tag-badge">C</span>
+                <span class="tag-badge">ESP8266</span>
+                <span class="tag-badge">Sensors</span>
+                <span class="tag-badge">Blynk IoT App</span>
+              </div>
+              <div class="project-action-bar">
+                <a href="https://github.com/prashantmeni" target="_blank" rel="noopener noreferrer"
+                  class="project-link-btn">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <span class="project-verified-tag"><i class="fas fa-check"></i> Field Tested</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card-exec" data-item-id="default_proj_3">
+          <div class="project-cover-container">
+            <span class="project-order-badge">PROJECT // 03</span>
+            <img src="Doc/Projects/smart_home.jpg" alt="Smart Home Automation System using Arduino" loading="lazy">
+          </div>
+
+          <div class="project-body-padding">
+            <div class="project-sector-tag">Home Automation &bull; Arduino Uno</div>
+            <h4 class="project-title-h4">Smart Home Automation System using Arduino</h4>
+            <p class="project-summary-p">
+              Designed and implemented a prototype smart home integrating IoT concepts with Arduino microcontroller.
+            </p>
+            <ul class="project-bullet-group">
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Integrated solar-powered street light
+                automation for energy efficiency.</li>
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Built a scaled 3D model house with
+                real-time functionality to demonstrate automation features.</li>
+              <li class="project-bullet-item"><i class="fas fa-circle-check"></i> Implemented control of servo motors
+                and gas detection (MQ2 sensor) for enhanced safety and automation.</li>
+            </ul>
+
+            <div class="project-footer-block">
+              <div class="project-tags-row">
+                <span class="tag-badge">C</span>
+                <span class="tag-badge">Arduino Uno</span>
+                <span class="tag-badge">Servo motor</span>
+                <span class="tag-badge">MQ2 Sensor</span>
+              </div>
+              <div class="project-action-bar">
+                <a href="https://github.com/prashantmeni" target="_blank" rel="noopener noreferrer"
+                  class="project-link-btn">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <span class="project-verified-tag"><i class="fas fa-check"></i> 3D Prototype</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section id="education" class="section-dark reveal">
+  <!-- ========================================================================
+       06: CERTIFICATIONS (HORIZONTAL CAROUSEL)
+       ======================================================================== -->
+  <section class="section-spacing" id="certifications">
     <div class="container">
-      <h2 class="section-header"><span class="text-accent">05.</span> Education</h2>
+      <div class="section-lead-box">
+        <p class="section-eyebrow">Verified Credentials</p>
+        <h2 class="section-title">Certificates &amp; Achievements</h2>
+      </div>
 
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2023 - 2027</div>
-          <div class="timeline-content">
-            <h3>B.E. Electronics & Communication</h3>
-            <h4>CMR Institute of Technology, Bengaluru</h4>
-            <p>Current CGPA: 6.0 | Focus: Embedded Systems & AI</p>
-          </div>
+      <div class="carousel-header-dock">
+        <div class="carousel-instruction">
+          <i class="fas fa-magnifying-glass-plus"></i>
+          <span>Click any certificate card to inspect high-resolution credential</span>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2021 - 2024</div>
-          <div class="timeline-content">
-            <h3>Diploma in ECE</h3>
-            <h4>Government Polytechnic, Rabakavi-Banahatti</h4>
-            <p>Score: 80.10% | Foundation in Analog & Digital Electronics</p>
-          </div>
+        <div class="carousel-nav-suite">
+          <span class="counter-pill-badge" id="cert-counter-badge">01 / 06</span>
+          <button class="arrow-circle-btn" id="cert-prev-btn" aria-label="Previous certificate">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="arrow-circle-btn" id="cert-next-btn" aria-label="Next certificate">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
+      </div>
+
+      <!-- Certificate Slider Track -->
+      <div class="horizontal-slider-track" id="certs-horizontal-track" data-lenis-prevent="true">
+
+        <!-- Cert 1 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_1" data-cert-src="Doc/certificates/certificate_1.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_1.png" alt="IoT Fundamentals &amp; Sensor Networks" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">IoT &amp; Wireless Systems</div>
+            <h4 class="cert-name-heading">IoT Fundamentals &amp; Sensor Networks</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cert 2 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_2" data-cert-src="Doc/certificates/certificate_2.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_2.png" alt="Embedded Systems &amp; Microcontrollers" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">Hardware Engineering</div>
+            <h4 class="cert-name-heading">Embedded Systems &amp; Microcontrollers</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cert 3 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_3" data-cert-src="Doc/certificates/certificate_3.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_3.png" alt="Python for Embedded &amp; Automation" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">Software Engineering</div>
+            <h4 class="cert-name-heading">Python for Embedded &amp; Automation</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cert 4 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_4" data-cert-src="Doc/certificates/certificate_4.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_4.png" alt="PCB Design &amp; KiCad CAD" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">Circuit Design</div>
+            <h4 class="cert-name-heading">PCB Design &amp; KiCad Fundamentals</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cert 5 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_5" data-cert-src="Doc/certificates/certificate_5.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_5.png" alt="MATLAB &amp; Signal Processing" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">Simulation &amp; DSP</div>
+            <h4 class="cert-name-heading">MATLAB &amp; Signal Processing</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cert 6 -->
+        <article class="cert-card-exec cert-clickable-tile" data-item-id="default_cert_6" data-cert-src="Doc/certificates/certificate_6.png">
+          <div class="cert-preview-frame">
+            <img src="Doc/certificates/certificate_6.png" alt="Industrial SQM &amp; Quality Engineering" loading="lazy">
+            <div class="cert-magnify-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="cert-body-content">
+            <div class="cert-subject-label">Quality Engineering</div>
+            <h4 class="cert-name-heading">Industrial SQM &amp; Quality Engineering</h4>
+            <div class="cert-meta-info">
+              <i class="fas fa-medal"></i>
+              <span>Credential Verified &bull; 2024</span>
+            </div>
+          </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <section id="certifications" class="section-dark reveal">
+  <!-- ========================================================================
+       07: CONTACT & TRANSMISSION
+       ======================================================================== -->
+  <section class="contact-wrapper-section" id="contact">
     <div class="container">
-      <h2 class="section-header"><span class="text-accent">06.</span> Certifications</h2>
+      <div class="contact-layout-grid">
 
-      <div class="cert-gallery">
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_1.png" alt="Certificate 1">
+        <!-- Contact Channels Column -->
+        <div class="contact-details-col">
+          <div>
+            <p class="section-eyebrow">Get In Touch</p>
+            <h2 class="contact-title-main">Let's Build <span>Together</span></h2>
+          </div>
+
+          <p class="contact-intro-p">
+            Seeking an AI internship to contribute to automation, machine learning, and innovative product development
+            while expanding practical industry experience. Reach out directly or submit a message below.
+          </p>
+
+          <div class="contact-link-stack">
+            <a href="mailto:prashantmeni2005@gmail.com" class="contact-row-entry">
+              <div class="contact-icon-square"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">EMAIL ADDRESS</div>
+                <div style="color: var(--text-heading); font-weight: 600;">prashantmeni2005@gmail.com</div>
+              </div>
+            </a>
+
+            <div class="contact-row-entry">
+              <div class="contact-icon-square"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">LOCATION</div>
+                <div style="color: var(--text-heading); font-weight: 600;">Bengaluru, Karnataka, India</div>
+              </div>
+            </div>
+
+            <div class="contact-row-entry">
+              <div class="contact-icon-square"><i class="fas fa-university"></i></div>
+              <div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">INSTITUTE</div>
+                <div style="color: var(--text-heading); font-weight: 600;">CMR Institute of Technology (CMRIT)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-buttons-deck">
+            <a href="https://github.com/prashantmeni" target="_blank" rel="noopener noreferrer"
+              class="social-circle-link" aria-label="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/prashant-meni-400548297" target="_blank" rel="noopener noreferrer"
+              class="social-circle-link" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:prashantmeni2005@gmail.com" class="social-circle-link" aria-label="Send Direct Email">
+              <i class="fas fa-paper-plane"></i>
+            </a>
+            <a href="Doc/Resume/1CR24EC414_Prashant Meni_Resume.pdf" download class="social-circle-link"
+              aria-label="Download Resume PDF">
+              <i class="fas fa-file-arrow-down"></i>
+            </a>
+          </div>
         </div>
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_2.png" alt="Certificate 2">
+
+        <!-- Contact Submission Form -->
+        <div class="contact-form-col">
+          <div class="contact-form-container">
+            <h3 class="form-title-h3">
+              <i class="fas fa-message"></i>
+              <span>Send a Direct Message</span>
+            </h3>
+
+            <form action="https://api.web3forms.com/submit" method="POST" id="executive-contact-form">
+              <input type="hidden" name="access_key" value="6abc1d8f-f5c7-4302-9fd6-7f88bdfe22ae">
+
+              <div class="form-inputs-dual">
+                <input type="text" name="name" class="clean-input-field" placeholder="Your Name" required>
+                <input type="email" name="email" class="clean-input-field" placeholder="Your Email Address" required>
+              </div>
+
+              <textarea name="message" class="clean-input-field" rows="5"
+                placeholder="Tell me about your hardware project, role, or inquiry..." required></textarea>
+
+              <button type="submit" class="submit-button-primary" id="executive-submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
         </div>
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_3.png" alt="Certificate 3">
-        </div>
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_4.png" alt="Certificate 4">
-        </div>
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_5.png" alt="Certificate 5">
-        </div>
-        <div class="cert-item">
-          <img src="Doc/certificates/certificate_6.png" alt="Certificate 6">
-        </div>
+
       </div>
 
+      <!-- Base Footer -->
+      <div class="footer-base-bar">
+        <div>
+          &copy; 2026 <a href="#hero">Prashant Meni</a> &bull; Electronics &amp; Communication Engineer
+        </div>
+      </div>
     </div>
   </section>
 
-  <div id="certModal" class="modal-backdrop">
-    <div class="cert-modal-content">
-      <button class="modal-close cert-close">&times;</button>
-      <img id="certModalImg" src="" alt="Certificate Preview">
+  <!-- ========================================================================
+       MODAL LIGHTBOX (CERTIFICATES)
+       ======================================================================== -->
+  <div class="lightbox-overlay" id="cert-modal-lightbox" data-lenis-prevent="true">
+    <div class="lightbox-backdrop" id="modal-backdrop-trigger"></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close-trigger" id="modal-close-btn" aria-label="Close Preview">
+        <i class="fas fa-xmark"></i>
+      </button>
+      <img id="lightbox-preview-img" src="" alt="High Resolution Credential Preview">
     </div>
   </div>
 
-  <section id="contact" class="section-dark reveal">
-    <div class="container contact-container">
-      <h2 class="section-header"><span class="text-accent">06.</span> Get In Touch</h2>
-      <p class="contact-sub">Have a project idea or want to discuss IoT? My inbox is always open.</p>
+    <!-- ========================================================================
+       INTERACTIVE SCRIPTS
+       ======================================================================== -->
+  <script type="module">
+    import Lenis from 'lenis';
 
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-        <input type="hidden" name="access_key" value="6abc1d8f-f5c7-4302-9fd6-7f88bdfe22ae">
+    // 1. Lenis Smooth Scrolling
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
 
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-        <button type="submit" class="btn-primary full-width">Send Message</button>
-      </form>
+    // Anchor smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          lenis.scrollTo(targetEl, { offset: -90, duration: 1.3 });
+        }
+      });
+    });
 
-      <div class="social-links">
-        <a href="https://github.com/prashantmeni" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/prashant-meni-400548297" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:prashantmeni2005@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
+    // 2. Scroll Progress Tracker & Active Navigation Dock
+    const progressTracker = document.getElementById('progress-tracker');
+    const navbar = document.getElementById('navbar');
+    const navAnchors = document.querySelectorAll('.nav-item a');
+    const sections = document.querySelectorAll('section[id]');
 
-      <footer class="footer">
-        <p>Designed & Built by Prashant Meni</p>
-      </footer>
-    </div>
-  </section>
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressTracker && docHeight > 0) {
+        progressTracker.style.width = `${(scrollY / docHeight) * 100}%`;
+      }
 
-  <div id="projectModal" class="modal-backdrop">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <div class="modal-grid">
-        <div class="modal-img-wrapper"><img id="modalImg"></div>
-        <div class="modal-text">
-          <h2 id="modalTitle"></h2>
-          <p id="modalTech" class="modal-tech"></p>
-          <p id="modalDesc"></p>
-        </div>
-      </div>
-    </div>
-  </div>
+      if (navbar) {
+        navbar.classList.toggle('scrolled', scrollY > 50);
+      }
+
+      // Active Section Navigation Tracking
+      let currentSectionId = '';
+      sections.forEach((sec) => {
+        const top = sec.offsetTop - 150;
+        if (scrollY >= top) {
+          currentSectionId = sec.getAttribute('id');
+        }
+      });
+
+      navAnchors.forEach((a) => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${currentSectionId}`);
+      });
+    }, { passive: true });
+
+    // 3. Hero Typewriter Script
+    const typeOutput = document.getElementById('typewriter-output');
+    const roles = [
+      'Electronics & Communication Engineering Student',
+      'AI, Automation & Intelligent Systems',
+      'Embedded Development & IoT Systems',
+      'Python & Hardware Integration'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function runTypewriter() {
+      if (!typeOutput) return;
+      const currentText = roles[roleIndex];
+
+      if (!isDeleting) {
+        typeOutput.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentText.length) {
+          isDeleting = true;
+          setTimeout(runTypewriter, 2200);
+          return;
+        }
+      } else {
+        typeOutput.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+
+      setTimeout(runTypewriter, isDeleting ? 30 : 75);
+    }
+    runTypewriter();
+
+    // 4. Smart Horizontal Wheel, Drag & Boundary Scroll Handler
+    function setupSmartHorizontalRail(trackEl, prevBtn, nextBtn, counterBadge, cardSelector) {
+      if (!trackEl) return;
+
+      function getCards() {
+        return trackEl.querySelectorAll(cardSelector);
+      }
+
+      function getStep() {
+        const cards = getCards();
+        return cards[0] ? cards[0].offsetWidth + 28 : 380;
+      }
+
+      function updateCounter() {
+        if (!counterBadge) return;
+        const cards = getCards();
+        const total = cards.length;
+        if (total === 0) return;
+        const maxScroll = trackEl.scrollWidth - trackEl.clientWidth;
+        let activeIdx = 1;
+        if (maxScroll > 10 && trackEl.scrollLeft >= maxScroll - 20) {
+          activeIdx = total;
+        } else {
+          activeIdx = Math.min(
+            Math.max(Math.round(trackEl.scrollLeft / getStep()) + 1, 1),
+            total
+          );
+        }
+        counterBadge.textContent = `${String(activeIdx).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+      }
+
+      // Smooth Step Buttons
+      prevBtn?.addEventListener('click', () => {
+        trackEl.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        trackEl.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+
+      // Update Live Counter on scroll and window resize
+      trackEl.addEventListener('scroll', updateCounter, { passive: true });
+      window.addEventListener('resize', updateCounter, { passive: true });
+      updateCounter();
+
+      // Mouse Drag-to-Scroll (Fluid Desktop Interaction)
+      let isDragging = false;
+      let startX = 0;
+      let scrollStart = 0;
+      let hasDragged = false;
+
+      trackEl.addEventListener('mousedown', (e) => {
+        if (e.button !== 0 || e.target.closest('button, a, input, select, textarea')) return;
+        isDragging = true;
+        hasDragged = false;
+        startX = e.pageX - trackEl.offsetLeft;
+        scrollStart = trackEl.scrollLeft;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.pageX - trackEl.offsetLeft;
+        const diff = (currentX - startX) * 1.25;
+        if (Math.abs(diff) > 4) {
+          hasDragged = true;
+          trackEl.classList.add('is-dragging');
+          trackEl.scrollLeft = scrollStart - diff;
+        }
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        setTimeout(() => {
+          trackEl.classList.remove('is-dragging');
+        }, 50);
+      });
+
+      // Prevent accidental link clicks after dragging
+      trackEl.addEventListener('click', (e) => {
+        if (hasDragged) {
+          e.preventDefault();
+          e.stopPropagation();
+          hasDragged = false;
+        }
+      }, true);
+
+      // Smart Wheel Handler:
+      // - Shift + Wheel: smooth horizontal scrolling
+      // - Trackpad horizontal gestures: handled natively by browser
+      // - Vertical Wheel: scrolls cards horizontally with boundary release so page scroll is NEVER trapped!
+      let wheelDebounceTimer = null;
+      trackEl.addEventListener('wheel', (e) => {
+        // If trackpad horizontal gesture, let browser handle natively
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+        // Shift + Wheel explicitly scrolls horizontally
+        if (e.shiftKey) {
+          e.preventDefault();
+          trackEl.scrollLeft += e.deltaY;
+          return;
+        }
+
+        const maxScroll = trackEl.scrollWidth - trackEl.clientWidth;
+        if (maxScroll <= 5) return; // cards fit entirely on screen
+
+        const isScrollingDown = e.deltaY > 0;
+        const isScrollingUp = e.deltaY < 0;
+        const atStart = trackEl.scrollLeft <= 5;
+        const atEnd = trackEl.scrollLeft >= maxScroll - 5;
+
+        // If at start and scrolling up, or at end and scrolling down: pass to page scroll!
+        if ((isScrollingUp && atStart) || (isScrollingDown && atEnd)) {
+          return;
+        }
+
+        // When scrolling cards horizontally, prevent page jump and temporarily disable CSS snap fighting
+        e.preventDefault();
+        trackEl.style.scrollSnapType = 'none';
+        trackEl.scrollLeft += e.deltaY * 0.9;
+
+        clearTimeout(wheelDebounceTimer);
+        wheelDebounceTimer = setTimeout(() => {
+          trackEl.style.scrollSnapType = 'x proximity';
+        }, 120);
+      }, { passive: false });
+    }
+
+    setupSmartHorizontalRail(
+      document.getElementById('projects-horizontal-track'),
+      document.getElementById('proj-prev-btn'),
+      document.getElementById('proj-next-btn'),
+      document.getElementById('proj-counter-badge'),
+      '.project-card-exec'
+    );
+
+    setupSmartHorizontalRail(
+      document.getElementById('certs-horizontal-track'),
+      document.getElementById('cert-prev-btn'),
+      document.getElementById('cert-next-btn'),
+      document.getElementById('cert-counter-badge'),
+      '.cert-card-exec'
+    );
+
+    // 5. Certificate Lightbox Modal Inspector
+    const modal = document.getElementById('cert-modal-lightbox');
+    const modalImg = document.getElementById('lightbox-preview-img');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalBackdrop = document.getElementById('modal-backdrop-trigger');
+
+    function openCertLightbox(imgSrc) {
+      if (!modal || !modalImg) return;
+      modalImg.src = imgSrc;
+      modal.classList.add('active');
+      lenis.stop();
+    }
+
+    function closeCertLightbox() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      lenis.start();
+    }
+
+    document.querySelectorAll('.cert-clickable-tile').forEach((tile) => {
+      tile.addEventListener('click', () => {
+        const src = tile.getAttribute('data-cert-src');
+        if (src) openCertLightbox(src);
+      });
+    });
+
+    modalCloseBtn?.addEventListener('click', closeCertLightbox);
+    modalBackdrop?.addEventListener('click', closeCertLightbox);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeCertLightbox();
+      }
+    });
+
+    // 6. Contact Form Web3Forms Async Submission
+    const contactForm = document.getElementById('executive-contact-form');
+    const submitBtn = document.getElementById('executive-submit-btn');
+
+    contactForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!submitBtn) return;
+
+      const originalHtml = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(contactForm)
+        });
+
+        if (res.ok) {
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> <span>Message Sent Successfully</span>';
+          contactForm.reset();
+        } else {
+          throw new Error('Transmission failed');
+        }
+      } catch (err) {
+        submitBtn.innerHTML = '<i class="fas fa-triangle-exclamation"></i> <span>Error — Please Retry</span>';
+      }
+
+      setTimeout(() => {
+        submitBtn.innerHTML = originalHtml;
+        submitBtn.disabled = false;
+      }, 3500);
+    });
 
 
-
-  <script src="script.js"></script>
-
-  <button id="backToTop" class="icon-btn" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+  </script>
 </body>
 
-
 </html>
-
-
-
